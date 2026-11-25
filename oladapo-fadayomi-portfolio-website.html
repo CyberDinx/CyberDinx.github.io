@@ -1,0 +1,670 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:,">
+<title>Oladapo Fadayomi — IT Systems &amp; Network Administrator</title>
+<meta name="description" content="Oladapo Fadayomi — IT Systems & Network Administrator in Henrico, Virginia. CCNA (2025), 10+ years experience in systems, networking, cloud and security.">
+<style>
+:root{
+  --bg:#f6f7f9;
+  --surface:#ffffff;
+  --surface-2:#f1f5f9;
+  --text:#0f1e33;
+  --muted:#526179;
+  --muted-2:#64748b;
+  --line:#e2e8f0;
+  --accent:#0a66c2;
+  --accent-dark:#004182;
+  --accent-light:#e8f0fe;
+  --navy:#0a2540;
+  --navy-2:#0f355e;
+  --radius:16px;
+  --radius-sm:10px;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0b1220;
+    --surface:#111c2e;
+    --surface-2:#16243a;
+    --text:#eef2f7;
+    --muted:#a8b6c8;
+    --muted-2:#8a9ab0;
+    --line:#1e344f;
+    --accent:#2e8fe8;
+    --accent-dark:#5aa9ec;
+    --accent-light:#132a44;
+    --navy:#0a2540;
+    --navy-2:#132f4d;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family: ui-sans-system, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+@media(min-width:640px){.wrap{padding:0 28px}}
+
+/* Top bar */
+.topbar{
+  position:sticky;top:0;z-index:20;
+  background:color-mix(in srgb, var(--surface) 92%, transparent);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.topbar-inner{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  min-height:64px;
+}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.avatar{
+  width:42px;height:42px;border-radius:50%;
+  background:var(--navy);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:15px;letter-spacing:.02em;flex-shrink:0;
+}
+@media(prefers-color-scheme:dark){.avatar{background:var(--accent)}}
+.brand-text{line-height:1.15;min-width:0}
+.brand-name{font-weight:700;font-size:15.5px;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand-role{font-size:12.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nav{display:none;gap:4px;align-items:center}
+@media(min-width:860px){.nav{display:flex}}
+.nav a{
+  color:var(--text);font-size:14px;font-weight:500;
+  padding:10px 12px;border-radius:999px;min-height:40px;display:inline-flex;align-items:center;
+}
+.nav a:hover{background:var(--surface-2);text-decoration:none}
+.top-cta{
+  display:inline-flex;align-items:center;justify-content:center;
+  background:var(--accent);color:#fff !important;font-weight:600;font-size:14px;
+  padding:0 16px;min-height:40px;border-radius:999px;white-space:nowrap;
+}
+.top-cta:hover{background:var(--accent-dark);text-decoration:none}
+
+/* Hero */
+.hero{
+  background:var(--navy);
+  color:#fff;
+  overflow:hidden;
+  position:relative;
+}
+.hero::after{
+  content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;
+  background:radial-gradient(circle, rgba(10,102,194,.55) 0%, rgba(10,102,194,0) 70%);
+  pointer-events:none;
+}
+.hero-inner{
+  position:relative;z-index:1;
+  padding-top:52px;padding-bottom:56px;
+  display:grid;gap:32px;
+}
+@media(min-width:900px){
+  .hero-inner{grid-template-columns:1.55fr .95fr;padding-top:68px;padding-bottom:72px;gap:48px;align-items:start}
+}
+@media(max-width:639px){
+  .topbar-inner{gap:10px;min-height:60px}
+  .avatar{width:36px;height:36px;font-size:13px}
+  .brand{gap:9px;flex:1 1 auto}
+  .brand-role{display:none}
+  .brand-name{white-space:normal;line-height:1.15;font-size:14.5px}
+  .top-cta{font-size:13px;padding:0 13px;min-height:38px}
+  .hero h1{font-size:42px}
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#8ec1f5;
+  margin-bottom:14px;
+}
+.hero-eyebrow::before{content:"";width:24px;height:2px;background:#2e8fe8;display:inline-block}
+.hero h1{
+  margin:0;font-size:44px;line-height:.95;letter-spacing:-.03em;font-weight:800;
+}
+@media(min-width:640px){.hero h1{font-size:58px}}
+@media(min-width:900px){.hero h1{font-size:64px}}
+.hero-title{
+  margin:14px 0 0;font-size:19px;line-height:1.35;color:#dbeafe;font-weight:500;letter-spacing:-.01em;max-width:640px;
+}
+@media(min-width:640px){.hero-title{font-size:21px}}
+.hero-facts{
+  display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;
+}
+.fact{
+  display:inline-flex;align-items:center;gap:7px;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);
+  color:#e0eaff;font-size:13.5px;font-weight:500;
+  padding:7px 12px;border-radius:999px;
+}
+.fact-dot{width:6px;height:6px;border-radius:50%;background:#38bdf8;flex-shrink:0}
+.hero-actions{
+  display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;
+}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  min-height:48px;padding:0 20px;border-radius:999px;
+  font-size:15px;font-weight:600;line-height:1;cursor:pointer;text-align:center;
+}
+.btn-primary{background:#fff;color:#0a2540 !important;border:1px solid #fff}
+.btn-primary:hover{background:#e8f0fe;text-decoration:none}
+.btn-accent{background:var(--accent);color:#fff !important;border:1px solid var(--accent)}
+.btn-accent:hover{background:#0958a6;text-decoration:none}
+.btn-ghost{background:transparent;color:#fff !important;border:1px solid rgba(255,255,255,.35)}
+.btn-ghost:hover{background:rgba(255,255,255,.08);text-decoration:none}
+.hero-card{
+  background:#fff;color:#0f1e33;border-radius:18px;padding:22px;
+  box-shadow:0 16px 40px rgba(0,0,0,.22);
+}
+@media(prefers-color-scheme:dark){.hero-card{background:#13243d;color:#eef2f7;box-shadow:none;border:1px solid #1e344f}}
+.hero-card h3{margin:0 0 4px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:700}
+.hero-card .card-name{font-size:18px;font-weight:700;line-height:1.2;margin-bottom:14px}
+.contact-rows{display:grid;gap:12px}
+.contact-row{display:flex;gap:12px;align-items:flex-start;font-size:14.5px;line-height:1.45}
+.contact-row strong{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:1px}
+.contact-row a{color:var(--text);font-weight:500;word-break:break-all}
+.avail{
+  margin-top:18px;padding-top:16px;border-top:1px solid var(--line);
+  display:flex;gap:10px;align-items:flex-start;
+}
+.avail-dot{width:10px;height:10px;border-radius:50%;background:#16a34a;margin-top:6px;flex-shrink:0;box-shadow:0 0 0 4px #dcfce7}
+@media(prefers-color-scheme:dark){.avail-dot{box-shadow:0 0 0 4px #14532d}}
+.avail p{margin:0;font-size:13.5px;line-height:1.5;color:var(--muted)}
+.avail strong{color:var(--text)}
+
+/* Sections */
+section{padding:52px 0 8px}
+@media(min-width:768px){section{padding:64px 0 8px}}
+.section-head{margin-bottom:24px}
+.section-label{
+  font-size:12.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--accent);margin:0 0 6px;
+}
+.section-title{margin:0;font-size:30px;line-height:1.1;letter-spacing:-.02em;font-weight:800}
+@media(min-width:640px){.section-title{font-size:34px}}
+.section-sub{margin:8px 0 0;color:var(--muted);font-size:16px;max-width:680px}
+
+/* About */
+.about-card{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:26px;
+}
+@media(min-width:640px){.about-card{padding:32px 34px}}
+.about-card p{margin:0 0 16px;font-size:16.5px;line-height:1.75;color:var(--text)}
+.about-card p:last-of-type{margin-bottom:0}
+.about-note{
+  margin-top:22px;background:var(--accent-light);border-radius:12px;padding:16px 18px;
+  display:flex;gap:12px;align-items:flex-start;
+}
+.about-note-icon{
+  width:36px;height:36px;border-radius:50%;background:var(--accent);color:#fff;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:18px;
+}
+.about-note p{margin:0;font-size:14.5px;line-height:1.6}
+
+/* Skills */
+.skills-grid{display:grid;gap:14px}
+@media(min-width:640px){.skills-grid{grid-template-columns:1fr 1fr}}
+@media(min-width:980px){.skills-grid{grid-template-columns:1fr 1fr 1fr}}
+.skill-card{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px;
+}
+.skill-icon{
+  width:44px;height:44px;border-radius:11px;background:var(--accent-light);color:var(--accent);
+  display:flex;align-items:center;justify-content:center;margin-bottom:14px;
+}
+.skill-card h3{margin:0 0 8px;font-size:16.5px;line-height:1.25;font-weight:700;letter-spacing:-.01em}
+.skill-card p{margin:0;font-size:14.5px;line-height:1.65;color:var(--muted)}
+
+/* Experience */
+.exp-list{display:grid;gap:14px}
+.exp-item{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:24px;
+  display:grid;gap:16px;
+}
+@media(min-width:768px){
+  .exp-item{grid-template-columns:240px 1fr;padding:26px 28px;gap:28px}
+}
+.exp-meta{ }
+.exp-date{
+  display:inline-flex;font-size:12.5px;font-weight:700;letter-spacing:.04em;
+  background:var(--surface-2);border:1px solid var(--line);padding:6px 10px;border-radius:999px;margin-bottom:10px;
+}
+.exp-company{font-size:15px;font-weight:700;line-height:1.3}
+.exp-location{font-size:13.5px;color:var(--muted);margin-top:2px}
+.exp-body h3{margin:0 0 10px;font-size:18px;line-height:1.25;letter-spacing:-.01em}
+.exp-body ul{margin:0;padding-left:18px;display:grid;gap:6px}
+.exp-body li{font-size:15px;line-height:1.6;color:var(--muted)}
+.exp-body li::marker{color:var(--accent)}
+
+/* Certs + Education two-col */
+.two-col{display:grid;gap:14px}
+@media(min-width:820px){.two-col{grid-template-columns:1.35fr .85fr}}
+.panel{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;
+}
+@media(min-width:640px){.panel{padding:28px}}
+.panel h3{margin:0 0 16px;font-size:17px;font-weight:700}
+.cert-list{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.cert-list li{
+  display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-bottom:1px solid var(--line);font-size:15px;line-height:1.5;
+}
+.cert-list li:last-child{border-bottom:none;padding-bottom:0}
+.cert-list li:first-child{padding-top:0}
+.cert-check{
+  width:22px;height:22px;border-radius:50%;background:var(--accent-light);color:var(--accent);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px;font-size:12px;font-weight:800;
+}
+.edu-degree{font-size:16px;font-weight:700;line-height:1.4;margin:0 0 6px}
+.edu-school{font-size:14.5px;color:var(--muted);line-height:1.6;margin:0}
+
+/* Projects */
+.projects-grid{display:grid;gap:14px}
+@media(min-width:820px){.projects-grid{grid-template-columns:1fr 1fr 1fr}}
+.project-card{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;
+  display:flex;flex-direction:column;
+}
+.project-card h3{margin:12px 0 8px;font-size:17px;line-height:1.3;letter-spacing:-.01em}
+.project-card p{margin:0;font-size:14.5px;line-height:1.65;color:var(--muted);flex:1}
+.status{
+  display:inline-flex;align-self:flex-start;font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;
+  padding:5px 9px;border-radius:999px;
+}
+.status-ongoing{background:#dcfce7;color:#166534}
+.status-progress{background:#fef3c7;color:#92400e}
+@media(prefers-color-scheme:dark){
+  .status-ongoing{background:#14532d;color:#bbf7d0}
+  .status-progress{background:#451a03;color:#fde68a}
+}
+.project-num{font-size:13px;font-weight:700;color:var(--accent);letter-spacing:.06em}
+
+/* Contact */
+.contact-band{
+  background:var(--navy);color:#fff;border-radius:20px;padding:32px 26px;margin-top:12px;
+  display:grid;gap:24px;
+}
+@media(min-width:820px){.contact-band{grid-template-columns:1.2fr .8fr;padding:40px 40px;align-items:center}}
+.contact-band h2{margin:0;font-size:28px;line-height:1.1;letter-spacing:-.02em}
+@media(min-width:640px){.contact-band h2{font-size:32px}}
+.contact-band p{margin:10px 0 0;color:#cbd5e1;font-size:15.5px;line-height:1.6;max-width:520px}
+.contact-details{display:grid;gap:10px}
+.contact-details a, .contact-details span{
+  display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);
+  color:#fff;padding:13px 14px;border-radius:12px;font-size:14.5px;font-weight:500;min-height:48px;
+}
+.contact-details a:hover{background:rgba(255,255,255,.12);text-decoration:none}
+.contact-details .label{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#93c5fd;font-weight:700;min-width:62px}
+
+footer{
+  margin-top:56px;border-top:1px solid var(--line);padding:22px 0 32px;
+}
+.footer-inner{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center}
+.footer-inner p{margin:0;font-size:13.5px;color:var(--muted)}
+.footer-links{display:flex;gap:6px;flex-wrap:wrap}
+.footer-links a{font-size:13.5px;font-weight:500;padding:8px 10px;min-height:36px;display:inline-flex;align-items:center}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <div class="brand">
+      <div class="avatar" aria-hidden="true">OF</div>
+      <div class="brand-text">
+        <div class="brand-name">Oladapo Fadayomi</div>
+        <div class="brand-role">IT Systems &amp; Network Administrator</div>
+      </div>
+    </div>
+    <nav class="nav" aria-label="Page sections">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="top-cta" href="Oladapo_Fadayomi_Resume.pdf" download>Download Résumé</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap hero-inner">
+    <div>
+      <div class="hero-eyebrow">Portfolio — Henrico, Virginia</div>
+      <h1>Oladapo<br>Fadayomi</h1>
+      <p class="hero-title">IT Systems &amp; Network Administrator | Network Engineer</p>
+
+      <div class="hero-facts" aria-label="Key credentials">
+        <span class="fact"><span class="fact-dot"></span> CCNA (2025)</span>
+        <span class="fact"><span class="fact-dot"></span> 10+ Years IT Systems &amp; Network Experience</span>
+        <span class="fact"><span class="fact-dot"></span> Henrico, Virginia</span>
+      </div>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="Oladapo_Fadayomi_Resume.pdf" download>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Résumé (PDF)
+        </a>
+        <a class="btn btn-accent" href="https://www.linkedin.com/in/oladapo-f-818a6b120/" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+          LinkedIn
+        </a>
+        <a class="btn btn-ghost" href="mailto:oladapo@fadayomi.com.ng">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+          Email Me
+        </a>
+      </div>
+    </div>
+
+    <aside class="hero-card" aria-label="Contact summary">
+      <h3>Contact</h3>
+      <div class="card-name">Henrico, VA 23294</div>
+      <div class="contact-rows">
+        <div class="contact-row">
+          <div>
+            <strong>Phone</strong>
+            <a href="tel:+18045027670">(804) 502-7670</a>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div>
+            <strong>Email</strong>
+            <a href="mailto:oladapo@fadayomi.com.ng">oladapo@fadayomi.com.ng</a>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div>
+            <strong>LinkedIn</strong>
+            <a href="https://www.linkedin.com/in/oladapo-f-818a6b120/" target="_blank" rel="noopener">linkedin.com/in/oladapo-f-818a6b120</a>
+          </div>
+        </div>
+      </div>
+      <div class="avail">
+        <span class="avail-dot" aria-hidden="true"></span>
+        <p><strong>Open to work.</strong> Authorized to work in the United States (EAD). Open to roles in the Richmond/Henrico metro and remote US positions.</p>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <!-- ABOUT -->
+  <section id="about" aria-labelledby="about-title">
+    <div class="section-head">
+      <p class="section-label">About</p>
+      <h2 class="section-title" id="about-title">Systems &amp; networks, done properly for over a decade</h2>
+    </div>
+    <div class="about-card">
+      <p>IT Systems and Network Administrator with 10+ years of experience across Nigeria and the United States, now based in Henrico, Virginia.</p>
+      <p>At ND Western Limited (Lagos), I led IT operations across two sites — Lagos and Warri — supporting 67 users and managing 5 servers, including 3 VMware vSphere hosts. My work there covered network administration, a full Microsoft 365 migration, firewall upgrades, and security assessments. Since moving to the US, I have worked as an IT Systems Developer at Bestway Tax Services (secure SQL databases and automated ETL pipelines) and I am currently a Senior IT Systems Engineer at Top Notch Computers in Henrico.</p>
+      <p>I am now focused on a specialized network or systems administration role where I can go deep in one domain. I am building hands-on lab skills in SD-WAN, SCCM/Intune endpoint management, and DevOps practices.</p>
+      <div class="about-note">
+        <div class="about-note-icon" aria-hidden="true">✓</div>
+        <p>Authorized to work in the United States (EAD). Open to roles in the Richmond/Henrico metro and remote US positions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" aria-labelledby="skills-title">
+    <div class="section-head">
+      <p class="section-label">Technical Skills</p>
+      <h2 class="section-title" id="skills-title">What I work with</h2>
+    </div>
+    <div class="skills-grid">
+      <article class="skill-card">
+        <div class="skill-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="5" r="2"/><circle cx="19" cy="19" r="2"/><circle cx="5" cy="19" r="2"/><path d="M10.5 10.5 6.8 6.8M13.5 10.5l3.7-3.7M10.5 13.5l-3.7 3.7M13.5 13.5l3.7 3.7"/></svg>
+        </div>
+        <h3>Networking</h3>
+        <p>Cisco routing &amp; switching, TCP/IP, DNS, DHCP, VLANs, VPN, firewall configuration, Meraki wireless</p>
+      </article>
+
+      <article class="skill-card">
+        <div class="skill-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="7" rx="2"/><rect x="2" y="14" width="20" height="7" rx="2"/><path d="M6 6.5h.01M6 17.5h.01"/></svg>
+        </div>
+        <h3>Systems Administration</h3>
+        <p>Windows &amp; Windows Server, Linux (Red Hat), macOS, Active Directory, system administration &amp; troubleshooting</p>
+      </article>
+
+      <article class="skill-card">
+        <div class="skill-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 0 0 0-9 6 6 0 0 0-11.6 1.6A4 4 0 0 0 7 19h10.5z"/></svg>
+        </div>
+        <h3>Cloud &amp; Virtualization</h3>
+        <p>Microsoft Azure, VMware ESXi / vSphere, Hyper-V, Proxmox, cloud administration</p>
+      </article>
+
+      <article class="skill-card">
+        <div class="skill-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8z"/></svg>
+        </div>
+        <h3>Collaboration &amp; Telephony</h3>
+        <p>Microsoft 365 administration (Teams, SharePoint, Outlook), FreePBX</p>
+      </article>
+
+      <article class="skill-card">
+        <div class="skill-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <h3>Automation &amp; Programming</h3>
+        <p>Python (Flask, Django), PowerShell, Bash — scripting and automation</p>
+      </article>
+
+      <article class="skill-card">
+        <div class="skill-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-3.6 8-10V5l-8-3-8 3v7c0 6.4 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+        </div>
+        <h3>Security &amp; Data</h3>
+        <p>Firewall configuration, penetration testing, ethical hacking, security assessments; MS SQL Server, ETL development</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" aria-labelledby="exp-title">
+    <div class="section-head">
+      <p class="section-label">Experience</p>
+      <h2 class="section-title" id="exp-title">Work history</h2>
+    </div>
+    <div class="exp-list">
+
+      <article class="exp-item">
+        <div class="exp-meta">
+          <span class="exp-date">June 2025 – Present</span>
+          <div class="exp-company">Top Notch Computers</div>
+          <div class="exp-location">Henrico, VA</div>
+        </div>
+        <div class="exp-body">
+          <h3>Senior IT Systems Engineer</h3>
+          <ul>
+            <li>Administer end-to-end systems and network support for corporate and individual clients</li>
+            <li>Assemble and configure custom computer systems tailored to client requirements</li>
+            <li>Manage remote server environments and Microsoft Hyper-V virtualization infrastructure</li>
+            <li>Administer FreePBX telephony systems and onboard new clients into secure IT environments</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="exp-item">
+        <div class="exp-meta">
+          <span class="exp-date">November 2024 – June 2025</span>
+          <div class="exp-company">Bestway Tax Services LLC</div>
+          <div class="exp-location">Henrico, VA</div>
+        </div>
+        <div class="exp-body">
+          <h3>IT Systems Developer</h3>
+          <ul>
+            <li>Developed secure, web-based SQL databases for tax record management and financial data storage</li>
+            <li>Built automated ETL pipelines for financial data extraction, transformation, and reporting</li>
+            <li>Engineered Python scripts for invoice parsing and data transformation, reducing manual data handling</li>
+            <li>Deployed and maintained Linux virtual servers with encrypted backup protocols</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="exp-item">
+        <div class="exp-meta">
+          <span class="exp-date">October 2013 – January 2024</span>
+          <div class="exp-company">ND Western Limited</div>
+          <div class="exp-location">Lagos, Nigeria</div>
+        </div>
+        <div class="exp-body">
+          <h3>Senior IT Analyst</h3>
+          <ul>
+            <li>Led IT operations across 2 sites (Lagos and Warri), supporting 67 users</li>
+            <li>Managed 5 servers, including 3 VMware vSphere hosts running virtual machines</li>
+            <li>Designed and implemented data integration workflows for financial analytics and reporting</li>
+            <li>Administered MS SQL databases and led the Microsoft 365 migration for the organization</li>
+            <li>Completed firewall upgrades and conducted ethical hacking and security assessments</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="exp-item">
+        <div class="exp-meta">
+          <span class="exp-date">July 2013 – September 2013</span>
+          <div class="exp-company">Citigrade Tech</div>
+          <div class="exp-location">Lagos, Nigeria</div>
+        </div>
+        <div class="exp-body">
+          <h3>Operations Engineer</h3>
+          <ul>
+            <li>Developed custom data recovery scripts for field operations</li>
+            <li>Installed and secured company-wide IT infrastructure</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="exp-item">
+        <div class="exp-meta">
+          <span class="exp-date">April 2012 – July 2013</span>
+          <div class="exp-company">Electronic Test Centre</div>
+          <div class="exp-location">Lagos, Nigeria</div>
+        </div>
+        <div class="exp-body">
+          <h3>Support Engineer</h3>
+          <ul>
+            <li>Automated system deployment and software installation processes</li>
+            <li>Configured Red Hat Linux servers and managed field deployment teams</li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS & EDUCATION -->
+  <section id="credentials" aria-labelledby="cred-title">
+    <div class="section-head">
+      <p class="section-label">Credentials</p>
+      <h2 class="section-title" id="cred-title">Certifications, training &amp; education</h2>
+    </div>
+    <div class="two-col">
+      <div class="panel">
+        <h3>Certifications &amp; Training</h3>
+        <ul class="cert-list">
+          <li><span class="cert-check" aria-hidden="true">✓</span><span>Cisco Certified Network Associate (CCNA) — June 2025</span></li>
+          <li><span class="cert-check" aria-hidden="true">✓</span><span>Certified Ethical Hacker (CEH v11) — Learning Tree</span></li>
+          <li><span class="cert-check" aria-hidden="true">✓</span><span>Microsoft Azure Administrator Training — Learning Tree</span></li>
+          <li><span class="cert-check" aria-hidden="true">✓</span><span>Intro to Data Science, Machine Learning &amp; AI — Learning Tree</span></li>
+          <li><span class="cert-check" aria-hidden="true">✓</span><span>Disaster Recovery &amp; Business Continuity — Learning Tree</span></li>
+          <li><span class="cert-check" aria-hidden="true">→</span><span>In progress: Python PCAP Certification • AWS Training</span></li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>Education</h3>
+        <p class="edu-degree">Bachelor of Engineering (B.Eng.), Electrical Engineering</p>
+        <p class="edu-school">University of Ilorin, Kwara State, Nigeria</p>
+        <div style="margin-top:22px;padding-top:18px;border-top:1px solid var(--line)">
+          <h3 style="margin-bottom:8px;font-size:14px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted)">Currently building</h3>
+          <p style="margin:0;font-size:14.5px;line-height:1.65;color:var(--muted)">Hands-on lab skills in SD-WAN, SCCM/Intune endpoint management, and DevOps practices.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" aria-labelledby="projects-title">
+    <div class="section-head">
+      <p class="section-label">Lab &amp; Portfolio Projects</p>
+      <h2 class="section-title" id="projects-title">Hands-on labs</h2>
+      <p class="section-sub">Practical environments I use to build and document new skills before applying them in production.</p>
+    </div>
+    <div class="projects-grid">
+      <article class="project-card">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+          <span class="project-num">01</span>
+          <span class="status status-ongoing">Ongoing</span>
+        </div>
+        <h3>Home Lab — Proxmox Virtualization</h3>
+        <p>A self-hosted Proxmox home lab used for hands-on practice: virtual machines, self-hosted services (including an n8n automation server), and a safe environment for testing network and systems configurations before touching production.</p>
+      </article>
+
+      <article class="project-card">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+          <span class="project-num">02</span>
+          <span class="status status-progress">In progress</span>
+        </div>
+        <h3>DevOps Skills Lab</h3>
+        <p>Structured lab program building on a 3-month DevOps crash course: Linux administration, scripting, CI/CD concepts, containers, and infrastructure automation — documented as portfolio projects.</p>
+      </article>
+
+      <article class="project-card">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:12px">
+          <span class="project-num">03</span>
+          <span class="status status-progress">In progress</span>
+        </div>
+        <h3>SCCM &amp; Intune Endpoint Management Lab</h3>
+        <p>Practice lab for Microsoft endpoint management: device enrollment, application deployment, patching, and policy configuration across SCCM/Configuration Manager and Intune.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" aria-labelledby="contact-title">
+    <div class="contact-band">
+      <div>
+        <h2 id="contact-title">Let’s talk about your next network or systems role</h2>
+        <p>I’m based in Henrico and focused on specialized network and systems administration work. The fastest way to reach me is email or LinkedIn — my résumé is one click away.</p>
+        <div class="hero-actions" style="margin-top:20px">
+          <a class="btn btn-primary" href="Oladapo_Fadayomi_Resume.pdf" download>Download Résumé (PDF)</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/oladapo-f-818a6b120/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+        </div>
+      </div>
+      <div class="contact-details">
+        <span><span class="label">Location</span> Henrico, VA 23294</span>
+        <a href="tel:+18045027670"><span class="label">Phone</span> (804) 502-7670</a>
+        <a href="mailto:oladapo@fadayomi.com.ng"><span class="label">Email</span> oladapo@fadayomi.com.ng</a>
+        <a href="https://www.linkedin.com/in/oladapo-f-818a6b120/" target="_blank" rel="noopener"><span class="label">LinkedIn</span> Connect on LinkedIn →</a>
+      </div>
+    </div>
+    <p style="text-align:center;margin:16px 0 0;font-size:14px;color:var(--muted)">Henrico, VA 23294 &nbsp;•&nbsp; (804) 502-7670 &nbsp;•&nbsp; oladapo@fadayomi.com.ng</p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <p>© 2026 Oladapo Fadayomi. All experience and credentials stated exactly as earned.</p>
+    <div class="footer-links">
+      <a href="https://www.linkedin.com/in/oladapo-f-818a6b120/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="mailto:oladapo@fadayomi.com.ng">Email</a>
+      <a href="Oladapo_Fadayomi_Resume.pdf" download>Résumé PDF</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
