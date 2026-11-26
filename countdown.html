@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tales by Python — Live Countdown</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#0a0a0c; color:#fff; font-family: Arial, Helvetica, sans-serif;
+         min-height:100vh; display:flex; flex-direction:column; align-items:center;
+         justify-content:center; text-align:center; padding:24px; }
+  .label { font-size:clamp(22px,6vw,44px); font-weight:bold; letter-spacing:2px; margin-bottom:8vh; }
+  .timer { font-size:clamp(56px,17vw,150px); font-weight:bold; color:#ffd228; line-height:1; font-variant-numeric:tabular-nums; }
+  .sub { font-size:clamp(16px,4.5vw,30px); color:#b4b4b4; margin-top:4vh; letter-spacing:1px; }
+  .when { font-size:clamp(20px,5.5vw,38px); font-weight:bold; margin-top:3vh; }
+  .barwrap { width:min(84vw,560px); height:26px; border:2px solid #505050; margin-top:7vh; }
+  .bar { height:100%; width:0%; background:#ffd228; transition:width 1s linear; }
+  .channel { font-size:clamp(16px,4.5vw,30px); margin-top:7vh; letter-spacing:1px; }
+</style>
+</head>
+<body>
+  <div class="label" id="label">STARTING SOON</div>
+  <div class="timer" id="timer">--:--:--</div>
+  <div class="sub">LIVE COUNTDOWN</div>
+  <div class="when">NEW STORY DROPS TODAY AT 4:00 PM ET</div>
+  <div class="barwrap"><div class="bar" id="bar"></div></div>
+  <div class="channel">TALES BY PYTHON</div>
+<script>
+  // Target: Thu Nov 26, 2026, 4:00 PM Eastern
+  var target = new Date("2026-11-26T16:00:00-05:00").getTime();
+  var windowMs = 20 * 60 * 1000; // progress bar fills over the final 20 minutes
+  function pad(n){ return (n<10?"0":"")+n; }
+  function tick(){
+    var now = Date.now();
+    var diff = target - now;
+    if (diff <= 0) {
+      document.getElementById("timer").textContent = "00:00:00";
+      document.getElementById("label").textContent = "IT'S HERE!";
+      document.getElementById("bar").style.width = "100%";
+      return;
+    }
+    var s = Math.floor(diff/1000);
+    var h = Math.floor(s/3600), m = Math.floor((s%3600)/60), sec = s%60;
+    document.getElementById("timer").textContent = pad(h)+":"+pad(m)+":"+pad(sec);
+    var p = 1 - Math.min(diff, windowMs)/windowMs;
+    document.getElementById("bar").style.width = (p*100).toFixed(1)+"%";
+    setTimeout(tick, 250);
+  }
+  tick();
+</script>
+</body>
+</html>
